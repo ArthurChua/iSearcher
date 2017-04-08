@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - tomcat [17/Jan/2017:21:40:10 +0800] "GET /manager/html HTTP/1.1" 200 19247
+0:0:0:0:0:0:0:1 - - [17/Jan/2017:21:40:10 +0800] "GET /manager/images/asf-logo.gif HTTP/1.1" 200 7279
+0:0:0:0:0:0:0:1 - - [17/Jan/2017:21:40:10 +0800] "GET /manager/images/tomcat.gif HTTP/1.1" 200 2066
+0:0:0:0:0:0:0:1 - - [17/Jan/2017:21:40:10 +0800] "GET /favicon.ico HTTP/1.1" 200 21630

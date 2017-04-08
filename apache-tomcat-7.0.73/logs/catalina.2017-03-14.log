@@ -1,0 +1,22 @@
+Mar 14, 2017 8:54:25 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Mar 14, 2017 8:54:28 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Mar 14, 2017 8:54:28 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Mar 14, 2017 8:54:28 AM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@2cb873f5]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Mar 14, 2017 8:54:28 AM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@2cb873f5]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Mar 14, 2017 8:54:28 AM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@2cb873f5]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Mar 14, 2017 8:54:28 AM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@2cb873f5]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Mar 14, 2017 8:54:28 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Mar 14, 2017 8:54:28 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Mar 14, 2017 8:54:28 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Mar 14, 2017 8:54:28 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]

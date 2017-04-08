@@ -1,0 +1,299 @@
+Jan 12, 2017 3:41:32 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/solr]
+Jan 12, 2017 3:41:32 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] has started
+Jan 12, 2017 3:41:32 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@b079117]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 12, 2017 3:41:32 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@b079117]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 12, 2017 3:41:32 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@b079117]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 12, 2017 3:41:33 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 3:41:33 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] is completed
+Jan 12, 2017 3:41:43 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/solr]
+Jan 12, 2017 3:41:43 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] has started
+Jan 12, 2017 3:41:44 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 3:41:50 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] is completed
+Jan 12, 2017 3:42:10 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/solr]
+Jan 12, 2017 3:42:10 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] has started
+Jan 12, 2017 3:42:11 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 3:42:11 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] is completed
+Jan 12, 2017 4:14:22 PM org.apache.catalina.startup.HostConfig reload
+INFO: Reloading context [/solr]
+Jan 12, 2017 4:14:22 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] has started
+Jan 12, 2017 4:14:23 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:14:29 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/solr] is completed
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.73
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Nov 7 2016 21:27:23 UTC
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.73.0
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.12.2
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.7.0_60-b19
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Library/apache-tomcat-7.0.73
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Library/apache-tomcat-7.0.73
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Library/apache-tomcat-7.0.73/conf/logging.properties
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Library/apache-tomcat-7.0.73/endorsed
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Library/apache-tomcat-7.0.73
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Library/apache-tomcat-7.0.73
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Library/apache-tomcat-7.0.73/temp
+Jan 12, 2017 4:55:00 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/arthur/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Jan 12, 2017 4:55:00 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jan 12, 2017 4:55:00 PM org.apache.coyote.AbstractProtocol init
+SEVERE: Failed to initialize end point associated with ProtocolHandler ["http-bio-8080"]
+java.net.BindException: Address already in use <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:665)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:452)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:560)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:840)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:642)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:667)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:253)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:427)
+Caused by: java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 17 more
+
+Jan 12, 2017 4:55:00 PM org.apache.catalina.core.StandardService initInternal
+SEVERE: Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:560)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:840)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:642)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:667)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:253)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:427)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:980)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:665)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:452)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	... 13 more
+Caused by: java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 17 more
+
+Jan 12, 2017 4:55:00 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jan 12, 2017 4:55:00 PM org.apache.coyote.AbstractProtocol init
+SEVERE: Failed to initialize end point associated with ProtocolHandler ["ajp-bio-8009"]
+java.net.BindException: Address already in use <null>:8009
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:665)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:452)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:560)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:840)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:642)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:667)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:253)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:427)
+Caused by: java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 16 more
+
+Jan 12, 2017 4:55:00 PM org.apache.catalina.core.StandardService initInternal
+SEVERE: Failed to initialize connector [Connector[AJP/1.3-8009]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-8009]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:560)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:840)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:642)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:667)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:253)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:427)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:980)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use <null>:8009
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:665)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:452)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	... 13 more
+Caused by: java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 16 more
+
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 493 ms
+Jan 12, 2017 4:55:00 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jan 12, 2017 4:55:00 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.73
+Jan 12, 2017 4:55:00 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor /Library/apache-tomcat-7.0.73/conf/Catalina/localhost/solr-example.xml
+Jan 12, 2017 4:55:01 PM org.apache.catalina.startup.SetContextPropertiesRule begin
+WARNING: [SetContextPropertiesRule]{Context} Setting property 'debug' to '0' did not find a matching property.
+Jan 12, 2017 4:55:02 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:02 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deployment of configuration descriptor /Library/apache-tomcat-7.0.73/conf/Catalina/localhost/solr-example.xml has finished in 1,905 ms
+Jan 12, 2017 4:55:02 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor /Library/apache-tomcat-7.0.73/conf/Catalina/localhost/solr.xml
+Jan 12, 2017 4:55:02 PM org.apache.catalina.startup.SetContextPropertiesRule begin
+WARNING: [SetContextPropertiesRule]{Context} Setting property 'debug' to '0' did not find a matching property.
+Jan 12, 2017 4:55:03 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deployment of configuration descriptor /Library/apache-tomcat-7.0.73/conf/Catalina/localhost/solr.xml has finished in 7,267 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Library/apache-tomcat-7.0.73/webapps/docs
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Library/apache-tomcat-7.0.73/webapps/docs has finished in 31 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Library/apache-tomcat-7.0.73/webapps/examples
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Library/apache-tomcat-7.0.73/webapps/examples has finished in 179 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Library/apache-tomcat-7.0.73/webapps/host-manager
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Library/apache-tomcat-7.0.73/webapps/host-manager has finished in 32 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Library/apache-tomcat-7.0.73/webapps/manager
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Library/apache-tomcat-7.0.73/webapps/manager has finished in 31 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Library/apache-tomcat-7.0.73/webapps/ROOT
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Library/apache-tomcat-7.0.73/webapps/ROOT has finished in 27 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 9509 ms
+Jan 12, 2017 4:55:10 PM org.apache.catalina.core.StandardServer await
+SEVERE: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:444)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:781)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:727)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:294)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:428)
+
+Jan 12, 2017 4:55:10 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jan 12, 2017 4:55:10 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jan 12, 2017 4:55:10 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jan 12, 2017 4:55:10 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jan 12, 2017 4:55:10 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Jan 12, 2017 4:55:10 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jan 12, 2017 4:55:10 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
