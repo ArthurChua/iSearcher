@@ -1,0 +1,2 @@
+/Library/hbase-0.98.8-hadoop2/bin/../bin/hbase: line 389: /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home /bin/java: No such file or directory
+/Library/hbase-0.98.8-hadoop2/bin/../bin/hbase: line 389: exec: /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home /bin/java: cannot execute: No such file or directory
