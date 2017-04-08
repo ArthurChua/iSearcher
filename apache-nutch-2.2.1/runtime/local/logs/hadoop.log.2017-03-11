@@ -1,0 +1,1091 @@
+2017-03-11 14:52:20,765 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 14:52:20,797 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 14:52:20,848 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 14:52:21,088 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 14:52:21,193 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 14:52:22,025 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 14:52:22,025 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 14:52:22,029 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 14:52:22,029 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 14:52:22,029 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 14:52:22,221 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 14:52:22,282 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 14:52:22,282 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 14:52:22,282 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 14:52:22,346 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 14:52:22,350 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 14:52:22,352 WARN  mapred.LocalJobRunner - job_local259106879_0002
+java.lang.NullPointerException
+	at org.apache.avro.util.Utf8.<init>(Utf8.java:37)
+	at org.apache.nutch.crawl.GeneratorReducer.setup(GeneratorReducer.java:100)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:174)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:649)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:418)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:398)
+2017-03-11 15:10:23,792 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 15:10:23
+2017-03-11 15:10:23,793 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 15:11:24,835 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 15:11:24,878 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 15:21:20,152 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 15:21:20
+2017-03-11 15:21:20,153 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: -i
+2017-03-11 15:22:21,096 INFO  store.SqlStore - creating schema: -D_webpage
+2017-03-11 15:22:21,133 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),status ' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),status ' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),status ' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 16:22:10,384 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 16:22:10
+2017-03-11 16:22:10,385 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 16:23:11,358 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 16:23:11,403 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 16:23:23,384 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 16:23:23
+2017-03-11 16:23:23,384 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 16:24:24,078 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 16:24:24,115 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 16:30:54,092 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 16:30:54
+2017-03-11 16:30:54,093 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 16:31:54,798 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 16:31:54,833 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 16:52:55,666 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 16:52:55
+2017-03-11 16:52:55,666 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 16:53:56,651 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 16:53:56,693 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 16:57:49,917 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 16:57:49
+2017-03-11 16:57:49,918 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 16:58:50,824 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 16:58:50,860 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR(32000),sta' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 17:05:52,950 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:05:52
+2017-03-11 17:05:52,950 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 17:06:53,807 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 17:06:53,841 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INT' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INT' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INT' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 17:11:39,412 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:11:39
+2017-03-11 17:11:39,412 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 17:12:40,318 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:12:40,353 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:12:40,413 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:12:40,632 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:12:40,721 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:12:41,565 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 17:12:41,565 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 17:12:41,566 INFO  crawl.InjectorJob - Injector: finished at 2017-03-11 17:12:41, elapsed: 00:01:02
+2017-03-11 17:15:28,461 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:15:28,490 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:15:28,537 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:15:28,764 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:15:28,843 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:15:29,707 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 17:15:29,707 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 17:15:29,711 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 17:15:29,711 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 17:15:29,711 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 17:15:29,894 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 17:15:29,950 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 17:15:29,950 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 17:15:29,950 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 17:15:30,015 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:15:30,019 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:15:30,019 WARN  mapred.LocalJobRunner - job_local882393165_0002
+java.lang.NullPointerException
+	at org.apache.avro.util.Utf8.<init>(Utf8.java:37)
+	at org.apache.nutch.crawl.GeneratorReducer.setup(GeneratorReducer.java:100)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:174)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:649)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:418)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:398)
+2017-03-11 17:24:25,568 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:24:25,602 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:24:25,659 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:24:25,924 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:24:25,984 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:24:25,985 WARN  mapred.LocalJobRunner - job_local1406932212_0001
+java.lang.Exception: java.lang.RuntimeException: x point org.apache.nutch.net.URLNormalizer not found.
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:354)
+Caused by: java.lang.RuntimeException: x point org.apache.nutch.net.URLNormalizer not found.
+	at org.apache.nutch.net.URLNormalizers.<init>(URLNormalizers.java:122)
+	at org.apache.nutch.crawl.InjectorJob$UrlMapper.setup(InjectorJob.java:99)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:142)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:764)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:364)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:223)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-11 17:25:42,840 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:25:42
+2017-03-11 17:25:42,841 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 17:26:43,716 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:26:43,748 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:26:43,819 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:26:44,035 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:26:44,093 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:26:44,093 WARN  mapred.LocalJobRunner - job_local1385906174_0001
+java.lang.Exception: java.lang.RuntimeException: x point org.apache.nutch.net.URLNormalizer not found.
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:354)
+Caused by: java.lang.RuntimeException: x point org.apache.nutch.net.URLNormalizer not found.
+	at org.apache.nutch.net.URLNormalizers.<init>(URLNormalizers.java:122)
+	at org.apache.nutch.crawl.InjectorJob$UrlMapper.setup(InjectorJob.java:99)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:142)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:764)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:364)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:223)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-11 17:26:44,972 ERROR crawl.InjectorJob - InjectorJob: java.lang.RuntimeException: job failed: name=inject urls, jobid=job_local1385906174_0001
+	at org.apache.nutch.util.NutchJob.waitForCompletion(NutchJob.java:54)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:233)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+
+2017-03-11 17:27:36,977 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:27:36
+2017-03-11 17:27:36,977 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 17:28:37,703 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:28:37,729 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:28:37,789 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:28:37,992 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:28:38,077 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:28:38,938 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 17:28:38,938 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 17:28:38,938 INFO  crawl.InjectorJob - Injector: finished at 2017-03-11 17:28:38, elapsed: 00:01:01
+2017-03-11 17:30:58,952 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:30:58
+2017-03-11 17:30:58,952 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: urls
+2017-03-11 17:31:59,761 INFO  store.SqlStore - creating schema: -depth_webpage
+2017-03-11 17:31:59,803 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INT' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INT' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-depth_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INT' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 17:33:13,372 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:33:13,408 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:33:13,458 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:33:13,692 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:33:13,778 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:33:14,630 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 17:33:14,630 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 17:33:14,634 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 17:33:14,634 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 17:33:14,634 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 17:33:14,820 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 17:33:14,879 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 17:33:14,879 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 17:33:14,879 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 17:33:14,941 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:33:14,946 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:33:14,946 WARN  mapred.LocalJobRunner - job_local1249132138_0002
+java.lang.NullPointerException
+	at org.apache.avro.util.Utf8.<init>(Utf8.java:37)
+	at org.apache.nutch.crawl.GeneratorReducer.setup(GeneratorReducer.java:100)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:174)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:649)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:418)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:398)
+2017-03-11 17:37:33,160 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 17:37:33,190 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 17:37:33,244 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 17:37:33,473 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:37:33,552 INFO  regex.RegexURLNormalizer - can't find rules for scope 'inject', using default
+2017-03-11 17:37:33,577 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:37:34,410 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 17:37:34,410 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 17:37:34,414 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 17:37:34,415 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 17:37:34,415 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 17:37:34,612 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 17:37:34,674 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 17:37:34,674 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 17:37:34,675 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 17:37:34,696 INFO  regex.RegexURLNormalizer - can't find rules for scope 'generate_host_count', using default
+2017-03-11 17:37:34,738 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 17:37:34,742 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 17:37:34,742 WARN  mapred.LocalJobRunner - job_local797139735_0002
+java.lang.NullPointerException
+	at org.apache.avro.util.Utf8.<init>(Utf8.java:37)
+	at org.apache.nutch.crawl.GeneratorReducer.setup(GeneratorReducer.java:100)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:174)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:649)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:418)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:398)
+2017-03-11 17:40:02,421 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:40:02
+2017-03-11 17:40:02,422 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: -i
+2017-03-11 17:41:03,422 INFO  store.SqlStore - creating schema: -D_webpage
+2017-03-11 17:41:03,466 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(512) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 17:50:30,080 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 17:50:30
+2017-03-11 17:50:30,080 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: -i
+2017-03-11 17:51:30,967 INFO  store.SqlStore - creating schema: -D_webpage
+2017-03-11 17:51:31,004 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 18:00:47,073 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 18:00:47,105 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 18:00:47,157 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 18:00:47,386 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:00:47,463 INFO  regex.RegexURLNormalizer - can't find rules for scope 'inject', using default
+2017-03-11 18:00:47,490 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:00:48,323 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 18:00:48,323 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 18:00:48,327 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:00:48,327 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:00:48,327 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:00:48,513 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:00:48,569 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:00:48,570 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:00:48,570 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:00:48,593 INFO  regex.RegexURLNormalizer - can't find rules for scope 'generate_host_count', using default
+2017-03-11 18:00:48,638 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:00:48,643 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:00:48,643 WARN  mapred.LocalJobRunner - job_local1316960503_0002
+java.lang.NullPointerException
+	at org.apache.avro.util.Utf8.<init>(Utf8.java:37)
+	at org.apache.nutch.crawl.GeneratorReducer.setup(GeneratorReducer.java:100)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:174)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:649)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:418)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:398)
+2017-03-11 18:35:17,372 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 18:35:17
+2017-03-11 18:35:17,372 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: -i
+2017-03-11 18:36:38,177 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.apache.gora.sql.store.SqlStore.getConnection(SqlStore.java:747)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:160)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:696)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1102)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2369)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2153)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at org.apache.gora.sql.store.SqlStore.getConnection(SqlStore.java:739)
+	... 10 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2552)
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:620)
+	... 26 more
+
+2017-03-11 18:38:32,116 INFO  crawl.InjectorJob - InjectorJob: starting at 2017-03-11 18:38:32
+2017-03-11 18:38:32,117 INFO  crawl.InjectorJob - InjectorJob: Injecting urlDir: -i
+2017-03-11 18:39:33,000 INFO  store.SqlStore - creating schema: -D_webpage
+2017-03-11 18:39:33,043 ERROR crawl.InjectorJob - InjectorJob: org.apache.gora.util.GoraException: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:167)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:135)
+	at org.apache.nutch.storage.StorageUtils.createWebStore(StorageUtils.java:75)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:221)
+	at org.apache.nutch.crawl.InjectorJob.inject(InjectorJob.java:251)
+	at org.apache.nutch.crawl.InjectorJob.run(InjectorJob.java:273)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.nutch.crawl.InjectorJob.main(InjectorJob.java:282)
+Caused by: java.io.IOException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:226)
+	at org.apache.gora.sql.store.SqlStore.initialize(SqlStore.java:172)
+	at org.apache.gora.store.DataStoreFactory.initializeDataStore(DataStoreFactory.java:102)
+	at org.apache.gora.store.DataStoreFactory.createDataStore(DataStoreFactory.java:161)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-D_webpage (id VARCHAR(767) PRIMARY KEY,headers BLOB,text VARCHAR,status INTEGER' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2624)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2127)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2427)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2345)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2330)
+	at org.apache.gora.sql.store.SqlStore.createSchema(SqlStore.java:224)
+	... 10 more
+
+2017-03-11 18:45:49,528 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 18:45:49,563 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 18:45:49,612 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 18:45:49,849 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:45:49,927 INFO  regex.RegexURLNormalizer - can't find rules for scope 'inject', using default
+2017-03-11 18:45:49,954 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:45:50,785 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 18:45:50,785 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 18:45:50,789 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:45:50,789 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:45:50,789 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:45:50,984 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:45:51,065 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:45:51,065 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:45:51,065 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:45:51,088 INFO  regex.RegexURLNormalizer - can't find rules for scope 'generate_host_count', using default
+2017-03-11 18:45:51,130 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:45:51,135 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:45:51,136 WARN  mapred.LocalJobRunner - job_local1960816984_0002
+java.lang.NullPointerException
+	at org.apache.avro.util.Utf8.<init>(Utf8.java:37)
+	at org.apache.nutch.crawl.GeneratorReducer.setup(GeneratorReducer.java:100)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:174)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:649)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:418)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:398)
+2017-03-11 18:48:05,074 INFO  crawl.InjectorJob - InjectorJob: Using class org.apache.gora.sql.store.SqlStore as the Gora storage class.
+2017-03-11 18:48:05,102 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 18:48:05,157 WARN  snappy.LoadSnappy - Snappy native library not loaded
+2017-03-11 18:48:05,376 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:05,454 INFO  regex.RegexURLNormalizer - can't find rules for scope 'inject', using default
+2017-03-11 18:48:05,479 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:06,320 INFO  crawl.InjectorJob - InjectorJob: total number of urls rejected by filters: 0
+2017-03-11 18:48:06,320 INFO  crawl.InjectorJob - InjectorJob: total number of urls injected after normalization and filtering: 1
+2017-03-11 18:48:06,324 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:06,324 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:06,324 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:06,509 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:06,562 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:06,562 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:06,562 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:06,581 INFO  regex.RegexURLNormalizer - can't find rules for scope 'generate_host_count', using default
+2017-03-11 18:48:06,620 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:06,631 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:07,466 WARN  fetcher.FetcherJob - Fetcher: Your 'http.agent.name' value should be listed first in 'http.robots.agents' property.
+2017-03-11 18:48:07,466 INFO  fetcher.FetcherJob - FetcherJob: threads: 10
+2017-03-11 18:48:07,466 INFO  fetcher.FetcherJob - FetcherJob: parsing: false
+2017-03-11 18:48:07,466 INFO  fetcher.FetcherJob - FetcherJob: resuming: false
+2017-03-11 18:48:07,466 INFO  fetcher.FetcherJob - FetcherJob : timelimit set for : -1
+2017-03-11 18:48:07,572 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:07,572 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:07,572 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:07,572 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:07,572 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:07,572 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:07,572 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:07,572 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:07,685 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:07,775 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:07,776 INFO  fetcher.FetcherJob - Using queue mode : byHost
+2017-03-11 18:48:07,776 INFO  fetcher.FetcherJob - Fetcher: threads: 10
+2017-03-11 18:48:07,779 INFO  fetcher.FetcherJob - QueueFeeder finished: total 2 records. Hit by time limit :0
+2017-03-11 18:48:07,781 INFO  fetcher.FetcherJob - fetching http://www.tianya.cn/ (queue crawl delay=5000ms)
+2017-03-11 18:48:07,781 INFO  fetcher.FetcherJob - fetching http://nutch.apache.org/ (queue crawl delay=5000ms)
+2017-03-11 18:48:07,781 INFO  fetcher.FetcherJob - -finishing thread FetcherThread2, activeThreads=2
+2017-03-11 18:48:07,781 INFO  fetcher.FetcherJob - -finishing thread FetcherThread3, activeThreads=2
+2017-03-11 18:48:07,782 INFO  fetcher.FetcherJob - -finishing thread FetcherThread4, activeThreads=2
+2017-03-11 18:48:07,782 INFO  fetcher.FetcherJob - -finishing thread FetcherThread5, activeThreads=2
+2017-03-11 18:48:07,782 INFO  fetcher.FetcherJob - -finishing thread FetcherThread6, activeThreads=2
+2017-03-11 18:48:07,782 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:07,782 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:07,782 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:07,782 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:07,782 INFO  fetcher.FetcherJob - -finishing thread FetcherThread7, activeThreads=2
+2017-03-11 18:48:07,782 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:07,782 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:07,782 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:07,782 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:07,782 INFO  fetcher.FetcherJob - -finishing thread FetcherThread8, activeThreads=2
+2017-03-11 18:48:07,783 INFO  fetcher.FetcherJob - Fetcher: throughput threshold: -1
+2017-03-11 18:48:07,783 INFO  fetcher.FetcherJob - -finishing thread FetcherThread9, activeThreads=2
+2017-03-11 18:48:07,783 INFO  fetcher.FetcherJob - Fetcher: throughput threshold sequence: 5
+2017-03-11 18:48:07,783 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:07,783 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:07,783 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:07,783 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:07,783 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:07,783 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:07,783 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:07,783 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:07,983 INFO  fetcher.FetcherJob - -finishing thread FetcherThread1, activeThreads=1
+2017-03-11 18:48:12,784 INFO  fetcher.FetcherJob - 0/1 spinwaiting/active, 1 pages, 0 errors, 0.2 0 pages/s, 17 17 kb/s, 0 URLs in 1 queues
+2017-03-11 18:48:17,788 INFO  fetcher.FetcherJob - 0/1 spinwaiting/active, 1 pages, 0 errors, 0.1 0 pages/s, 8 0 kb/s, 0 URLs in 1 queues
+2017-03-11 18:48:19,467 ERROR http.Http - Failed with the following error: 
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:273)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:334)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at java.io.PushbackInputStream.read(PushbackInputStream.java:186)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.apache.nutch.protocol.http.HttpResponse.readPlainContent(HttpResponse.java:230)
+	at org.apache.nutch.protocol.http.HttpResponse.<init>(HttpResponse.java:153)
+	at org.apache.nutch.protocol.http.Http.getResponse(Http.java:68)
+	at org.apache.nutch.protocol.http.api.HttpBase.getProtocolOutput(HttpBase.java:133)
+	at org.apache.nutch.fetcher.FetcherReducer$FetcherThread.run(FetcherReducer.java:518)
+2017-03-11 18:48:19,469 WARN  fetcher.FetcherJob - fetch of http://nutch.apache.org/ failed with: java.net.SocketTimeoutException: Read timed out
+2017-03-11 18:48:19,470 INFO  fetcher.FetcherJob - -finishing thread FetcherThread0, activeThreads=0
+2017-03-11 18:48:22,790 INFO  fetcher.FetcherJob - 0/0 spinwaiting/active, 2 pages, 1 errors, 0.1 0 pages/s, 5 0 kb/s, 0 URLs in 0 queues
+2017-03-11 18:48:22,790 INFO  fetcher.FetcherJob - -activeThreads=0
+2017-03-11 18:48:22,800 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:23,702 INFO  parse.ParserJob - ParserJob: resuming:	false
+2017-03-11 18:48:23,702 INFO  parse.ParserJob - ParserJob: forced reparse:	false
+2017-03-11 18:48:23,702 INFO  parse.ParserJob - ParserJob: parsing all
+2017-03-11 18:48:23,926 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2017-03-11 18:48:24,032 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:24,042 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:24,045 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2017-03-11 18:48:24,057 INFO  parse.ParserJob - Parsing http://www.tianya.cn/
+2017-03-11 18:48:24,172 INFO  regex.RegexURLNormalizer - can't find rules for scope 'outlink', using default
+2017-03-11 18:48:24,180 INFO  parse.ParserJob - Parsing http://nutch.apache.org/
+2017-03-11 18:48:24,183 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:25,102 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:25,167 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:25,167 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:25,167 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:25,167 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:25,174 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:26,078 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:26,078 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:26,078 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:26,148 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:26,201 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:26,201 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:26,201 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:26,207 INFO  regex.RegexURLNormalizer - can't find rules for scope 'generate_host_count', using default
+2017-03-11 18:48:26,221 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:26,224 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:27,130 WARN  fetcher.FetcherJob - Fetcher: Your 'http.agent.name' value should be listed first in 'http.robots.agents' property.
+2017-03-11 18:48:27,130 INFO  fetcher.FetcherJob - FetcherJob: threads: 10
+2017-03-11 18:48:27,130 INFO  fetcher.FetcherJob - FetcherJob: parsing: false
+2017-03-11 18:48:27,130 INFO  fetcher.FetcherJob - FetcherJob: resuming: false
+2017-03-11 18:48:27,130 INFO  fetcher.FetcherJob - FetcherJob : timelimit set for : -1
+2017-03-11 18:48:27,132 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:27,132 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:27,132 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:27,132 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:27,132 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:27,132 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:27,132 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:27,132 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:27,199 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:27,279 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:27,280 INFO  fetcher.FetcherJob - Using queue mode : byHost
+2017-03-11 18:48:27,280 INFO  fetcher.FetcherJob - Fetcher: threads: 10
+2017-03-11 18:48:27,282 INFO  fetcher.FetcherJob - QueueFeeder finished: total 3 records. Hit by time limit :0
+2017-03-11 18:48:27,283 INFO  fetcher.FetcherJob - fetching http://nutch.apache.org/ (queue crawl delay=5000ms)
+2017-03-11 18:48:27,283 INFO  fetcher.FetcherJob - fetching http://www.tianya.cn/m/ (queue crawl delay=5000ms)
+2017-03-11 18:48:27,284 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:27,284 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:27,284 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:27,284 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:27,284 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:27,284 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:27,284 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:27,284 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:27,284 INFO  fetcher.FetcherJob - Fetcher: throughput threshold: -1
+2017-03-11 18:48:27,284 INFO  fetcher.FetcherJob - Fetcher: throughput threshold sequence: 5
+2017-03-11 18:48:27,284 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:27,284 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:27,284 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:27,284 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:27,284 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:27,284 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:27,284 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:27,284 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob - 9/10 spinwaiting/active, 1 pages, 0 errors, 0.2 0 pages/s, 33 33 kb/s, 1 URLs in 2 queues
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob - * queue: http://www.tianya.cn
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   maxThreads    = 1
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   inProgress    = 0
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   crawlDelay    = 5000
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   minCrawlDelay = 0
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   nextFetchTime = 1489229312390
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   now           = 1489229312286
+2017-03-11 18:48:32,286 INFO  fetcher.FetcherJob -   0. http://www.tianya.cn/
+2017-03-11 18:48:32,422 INFO  fetcher.FetcherJob - fetching http://www.tianya.cn/ (queue crawl delay=5000ms)
+2017-03-11 18:48:32,525 INFO  fetcher.FetcherJob - -finishing thread FetcherThread1, activeThreads=9
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread7, activeThreads=8
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread8, activeThreads=7
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread9, activeThreads=1
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread5, activeThreads=5
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread4, activeThreads=3
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread6, activeThreads=2
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread3, activeThreads=5
+2017-03-11 18:48:32,819 INFO  fetcher.FetcherJob - -finishing thread FetcherThread2, activeThreads=4
+2017-03-11 18:48:37,288 INFO  fetcher.FetcherJob - 0/1 spinwaiting/active, 2 pages, 0 errors, 0.2 0 pages/s, 25 17 kb/s, 0 URLs in 1 queues
+2017-03-11 18:48:39,429 ERROR http.Http - Failed with the following error: 
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:273)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:334)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at java.io.PushbackInputStream.read(PushbackInputStream.java:186)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.apache.nutch.protocol.http.HttpResponse.readPlainContent(HttpResponse.java:230)
+	at org.apache.nutch.protocol.http.HttpResponse.<init>(HttpResponse.java:153)
+	at org.apache.nutch.protocol.http.Http.getResponse(Http.java:68)
+	at org.apache.nutch.protocol.http.api.HttpBase.getProtocolOutput(HttpBase.java:133)
+	at org.apache.nutch.fetcher.FetcherReducer$FetcherThread.run(FetcherReducer.java:518)
+2017-03-11 18:48:39,430 WARN  fetcher.FetcherJob - fetch of http://nutch.apache.org/ failed with: java.net.SocketTimeoutException: Read timed out
+2017-03-11 18:48:39,431 INFO  fetcher.FetcherJob - -finishing thread FetcherThread0, activeThreads=0
+2017-03-11 18:48:42,291 INFO  fetcher.FetcherJob - 0/0 spinwaiting/active, 3 pages, 1 errors, 0.2 0 pages/s, 16 0 kb/s, 0 URLs in 0 queues
+2017-03-11 18:48:42,291 INFO  fetcher.FetcherJob - -activeThreads=0
+2017-03-11 18:48:42,299 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:43,215 INFO  parse.ParserJob - ParserJob: resuming:	false
+2017-03-11 18:48:43,215 INFO  parse.ParserJob - ParserJob: forced reparse:	false
+2017-03-11 18:48:43,215 INFO  parse.ParserJob - ParserJob: parsing all
+2017-03-11 18:48:43,239 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2017-03-11 18:48:43,304 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:43,310 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:43,311 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2017-03-11 18:48:43,318 INFO  parse.ParserJob - Parsing http://www.tianya.cn/
+2017-03-11 18:48:43,342 INFO  regex.RegexURLNormalizer - can't find rules for scope 'outlink', using default
+2017-03-11 18:48:43,346 INFO  parse.ParserJob - Parsing http://www.tianya.cn/m/
+2017-03-11 18:48:43,427 INFO  parse.ParserJob - Parsing http://nutch.apache.org/
+2017-03-11 18:48:43,431 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:44,353 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:44,468 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:44,468 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:44,468 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:44,468 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:44,496 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:45,338 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:45,338 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:45,338 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:45,399 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:45,468 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:48:45,468 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:48:45,468 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:48:45,473 INFO  regex.RegexURLNormalizer - can't find rules for scope 'generate_host_count', using default
+2017-03-11 18:48:45,500 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:45,508 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:48:46,386 WARN  fetcher.FetcherJob - Fetcher: Your 'http.agent.name' value should be listed first in 'http.robots.agents' property.
+2017-03-11 18:48:46,386 INFO  fetcher.FetcherJob - FetcherJob: threads: 10
+2017-03-11 18:48:46,386 INFO  fetcher.FetcherJob - FetcherJob: parsing: false
+2017-03-11 18:48:46,386 INFO  fetcher.FetcherJob - FetcherJob: resuming: false
+2017-03-11 18:48:46,386 INFO  fetcher.FetcherJob - FetcherJob : timelimit set for : -1
+2017-03-11 18:48:46,387 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:46,387 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:46,387 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:46,387 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:46,387 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:46,387 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:46,387 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:46,387 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:46,450 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:48:46,618 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:48:46,619 INFO  fetcher.FetcherJob - Using queue mode : byHost
+2017-03-11 18:48:46,619 INFO  fetcher.FetcherJob - Fetcher: threads: 10
+2017-03-11 18:48:46,622 INFO  fetcher.FetcherJob - fetching http://bbs.tianya.cn/m/post-1095-379584-1.shtml (queue crawl delay=5000ms)
+2017-03-11 18:48:46,622 INFO  fetcher.FetcherJob - fetching http://nutch.apache.org/ (queue crawl delay=5000ms)
+2017-03-11 18:48:46,623 INFO  fetcher.FetcherJob - fetching http://www.tianya.cn/ (queue crawl delay=5000ms)
+2017-03-11 18:48:46,623 INFO  fetcher.FetcherJob - fetching http://3c.tianya.cn/kehuduan/2015/zk/index.shtml (queue crawl delay=5000ms)
+2017-03-11 18:48:46,623 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:46,623 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:46,623 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:46,623 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:46,623 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:46,623 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:46,623 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:46,623 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:46,624 INFO  fetcher.FetcherJob - Fetcher: throughput threshold: -1
+2017-03-11 18:48:46,624 INFO  fetcher.FetcherJob - Fetcher: throughput threshold sequence: 5
+2017-03-11 18:48:46,624 INFO  fetcher.FetcherJob - QueueFeeder finished: total 7 records. Hit by time limit :0
+2017-03-11 18:48:46,624 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:46,624 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:46,624 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:46,624 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:46,624 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:46,624 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:46,624 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:46,624 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:46,624 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:46,624 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:46,624 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:46,624 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:46,624 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:46,624 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:46,624 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:46,624 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:46,625 ERROR protocol.RobotRulesParser - Agent we advertise (Caiwenpu-Nutch-Spider) not listed first in 'http.robots.agents' property!
+2017-03-11 18:48:46,625 INFO  http.Http - http.proxy.host = null
+2017-03-11 18:48:46,625 INFO  http.Http - http.proxy.port = 8080
+2017-03-11 18:48:46,625 INFO  http.Http - http.timeout = 10000
+2017-03-11 18:48:46,625 INFO  http.Http - http.content.limit = 65536
+2017-03-11 18:48:46,625 INFO  http.Http - http.agent = Caiwenpu-Nutch-Spider/Nutch-2.2.1
+2017-03-11 18:48:46,625 INFO  http.Http - http.accept.language = ja-jp, en-us,en-gb,en;q=0.7,*;q=0.3
+2017-03-11 18:48:46,625 INFO  http.Http - http.accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob - 10/10 spinwaiting/active, 4 pages, 0 errors, 0.8 1 pages/s, 224 224 kb/s, 3 URLs in 2 queues
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob - * queue: http://bbs.tianya.cn
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   maxThreads    = 1
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   inProgress    = 0
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   crawlDelay    = 5000
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   minCrawlDelay = 0
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   nextFetchTime = 1489229331928
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   now           = 1489229331625
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   0. http://bbs.tianya.cn/m/block.jsp
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob -   1. http://bbs.tianya.cn/m/post-1095-382586-1.shtml
+2017-03-11 18:48:51,625 INFO  fetcher.FetcherJob - * queue: http://www.tianya.cn
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   maxThreads    = 1
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   inProgress    = 0
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   crawlDelay    = 5000
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   minCrawlDelay = 0
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   nextFetchTime = 1489229331703
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   now           = 1489229331626
+2017-03-11 18:48:51,626 INFO  fetcher.FetcherJob -   0. http://www.tianya.cn/m/
+2017-03-11 18:48:51,737 INFO  fetcher.FetcherJob - fetching http://www.tianya.cn/m/ (queue crawl delay=5000ms)
+2017-03-11 18:48:51,959 INFO  fetcher.FetcherJob - fetching http://bbs.tianya.cn/m/block.jsp (queue crawl delay=5000ms)
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob - 10/10 spinwaiting/active, 6 pages, 0 errors, 0.6 0 pages/s, 172 120 kb/s, 1 URLs in 1 queues
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob - * queue: http://bbs.tianya.cn
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   maxThreads    = 1
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   inProgress    = 0
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   crawlDelay    = 5000
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   minCrawlDelay = 0
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   nextFetchTime = 1489229337160
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   now           = 1489229336629
+2017-03-11 18:48:56,629 INFO  fetcher.FetcherJob -   0. http://bbs.tianya.cn/m/post-1095-382586-1.shtml
+2017-03-11 18:48:57,180 INFO  fetcher.FetcherJob - fetching http://bbs.tianya.cn/m/post-1095-382586-1.shtml (queue crawl delay=5000ms)
+2017-03-11 18:48:57,194 INFO  fetcher.FetcherJob - -finishing thread FetcherThread0, activeThreads=9
+2017-03-11 18:48:57,197 INFO  fetcher.FetcherJob - -finishing thread FetcherThread6, activeThreads=8
+2017-03-11 18:48:57,202 INFO  fetcher.FetcherJob - -finishing thread FetcherThread8, activeThreads=7
+2017-03-11 18:48:57,202 INFO  fetcher.FetcherJob - -finishing thread FetcherThread7, activeThreads=6
+2017-03-11 18:48:57,202 INFO  fetcher.FetcherJob - -finishing thread FetcherThread5, activeThreads=4
+2017-03-11 18:48:57,202 INFO  fetcher.FetcherJob - -finishing thread FetcherThread9, activeThreads=5
+2017-03-11 18:48:57,229 INFO  fetcher.FetcherJob - -finishing thread FetcherThread1, activeThreads=3
+2017-03-11 18:48:57,343 INFO  fetcher.FetcherJob - -finishing thread FetcherThread3, activeThreads=2
+2017-03-11 18:48:57,348 INFO  fetcher.FetcherJob - -finishing thread FetcherThread2, activeThreads=1
+2017-03-11 18:48:57,441 INFO  fetcher.FetcherJob - -finishing thread FetcherThread4, activeThreads=0
+2017-03-11 18:49:01,631 INFO  fetcher.FetcherJob - 0/0 spinwaiting/active, 7 pages, 0 errors, 0.5 0 pages/s, 142 82 kb/s, 0 URLs in 0 queues
+2017-03-11 18:49:01,631 INFO  fetcher.FetcherJob - -activeThreads=0
+2017-03-11 18:49:01,657 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:49:02,484 INFO  parse.ParserJob - ParserJob: resuming:	false
+2017-03-11 18:49:02,484 INFO  parse.ParserJob - ParserJob: forced reparse:	false
+2017-03-11 18:49:02,484 INFO  parse.ParserJob - ParserJob: parsing all
+2017-03-11 18:49:02,502 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2017-03-11 18:49:02,560 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:49:02,565 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:49:02,567 INFO  crawl.SignatureFactory - Using Signature impl: org.apache.nutch.crawl.MD5Signature
+2017-03-11 18:49:02,574 INFO  parse.ParserJob - Parsing http://3c.tianya.cn/kehuduan/2015/zk/index.shtml
+2017-03-11 18:49:02,584 INFO  regex.RegexURLNormalizer - can't find rules for scope 'outlink', using default
+2017-03-11 18:49:02,587 INFO  parse.ParserJob - Parsing http://bbs.tianya.cn/m/block.jsp
+2017-03-11 18:49:02,718 INFO  parse.ParserJob - Parsing http://bbs.tianya.cn/m/post-1095-379584-1.shtml
+2017-03-11 18:49:02,763 INFO  parse.ParserJob - Parsing http://bbs.tianya.cn/m/post-1095-382586-1.shtml
+2017-03-11 18:49:02,815 INFO  parse.ParserJob - Parsing http://www.tianya.cn/
+2017-03-11 18:49:02,823 INFO  parse.ParserJob - Parsing http://www.tianya.cn/m/
+2017-03-11 18:49:02,844 INFO  parse.ParserJob - Parsing http://nutch.apache.org/
+2017-03-11 18:49:02,916 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 18:49:03,608 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 18:49:03,725 INFO  mapreduce.GoraRecordWriter - gora.buffer.write.limit = 10000
+2017-03-11 18:49:03,725 INFO  crawl.FetchScheduleFactory - Using FetchSchedule impl: org.apache.nutch.crawl.DefaultFetchSchedule
+2017-03-11 18:49:03,725 INFO  crawl.AbstractFetchSchedule - defaultInterval=2592000
+2017-03-11 18:49:03,725 INFO  crawl.AbstractFetchSchedule - maxInterval=7776000
+2017-03-11 18:49:04,000 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 19:18:01,377 INFO  solr.SolrIndexerJob - SolrIndexerJob: starting
+2017-03-11 19:19:01,886 INFO  solr.SolrIndexerJob - SolrIndexerJob: starting
+2017-03-11 19:20:02,174 INFO  basic.BasicIndexingFilter - Maximum title length for indexing set to: 100
+2017-03-11 19:20:02,174 INFO  indexer.IndexingFilters - Adding org.apache.nutch.indexer.basic.BasicIndexingFilter
+2017-03-11 19:20:02,175 INFO  anchor.AnchorIndexingFilter - Anchor deduplication is: off
+2017-03-11 19:20:02,175 INFO  indexer.IndexingFilters - Adding org.apache.nutch.indexer.anchor.AnchorIndexingFilter
+2017-03-11 19:20:02,776 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-11 19:20:03,273 INFO  mapreduce.GoraRecordReader - gora.buffer.read.limit = 10000
+2017-03-11 19:20:03,298 INFO  solr.SolrMappingReader - source: content dest: content
+2017-03-11 19:20:03,298 INFO  solr.SolrMappingReader - source: title dest: title
+2017-03-11 19:20:03,298 INFO  solr.SolrMappingReader - source: host dest: host
+2017-03-11 19:20:03,299 INFO  solr.SolrMappingReader - source: batchId dest: batchId
+2017-03-11 19:20:03,299 INFO  solr.SolrMappingReader - source: boost dest: boost
+2017-03-11 19:20:03,299 INFO  solr.SolrMappingReader - source: digest dest: digest
+2017-03-11 19:20:03,299 INFO  solr.SolrMappingReader - source: tstamp dest: tstamp
+2017-03-11 19:20:03,301 INFO  basic.BasicIndexingFilter - Maximum title length for indexing set to: 100
+2017-03-11 19:20:03,301 INFO  indexer.IndexingFilters - Adding org.apache.nutch.indexer.basic.BasicIndexingFilter
+2017-03-11 19:20:03,301 INFO  anchor.AnchorIndexingFilter - Anchor deduplication is: off
+2017-03-11 19:20:03,301 INFO  indexer.IndexingFilters - Adding org.apache.nutch.indexer.anchor.AnchorIndexingFilter
+2017-03-11 19:20:03,487 WARN  mapred.FileOutputCommitter - Output path is null in cleanup
+2017-03-11 19:20:04,295 INFO  solr.SolrIndexerJob - SolrIndexerJob: done.
